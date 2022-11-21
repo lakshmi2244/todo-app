@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script src="https://kit.fontawesome.com/a772cbaaee.js" crossorigin="anonymous"></script>
+	<style type="text/css">
+		.listtype{
+			list-style: none;
+		}
+		*{
+			margin: 0%;
+			padding:  0.5%;
+		}
+		body{
+			background-image: url(https://www.arm.com/-/media/global/homepage/Animated%20Cards/solutions-short-image-infrastructure-457x296.jpg?rev=a7b64ce2fc894cdc91d3abb00796a104&revision=a7b64ce2-fc89-4cdc-91d3-abb00796a104);
+			background-repeat: no-repeat;
+			text-align: center;
+			margin-top: 11%;
+			background-size: 100%;
+			font-size: 30px;
+			color: white;
+		}
+		#new{
+			font-size: 18px;
+			text-align: center;
+		}
+		button{
+			width: 15%;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	<input id="new" placeholder="Enter a text">
+	<ul>
+		<li class="listtype">Hello Everyone</li>
+		<li class="listtype">Good Morning</li>
+	</ul>
+	<button onclick="todo()">submit</button>
+	<script type="text/javascript">
+		function todo(){
+			let Todo=document.getElementById("new").value,todolist=[]
+			if (Todo===""){
+				alert("Enter a Todo value")
+			}
+			else{
+				add(Todo)
+			}
+			console.log(Todo)
+			document.getElementById("new").value=""
+		}
+		function add(newvalue){
+			let ul=document.querySelector("ul")
+			console.log(ul)
+			let li=document.createElement("li");
+			li.innerHTML=`<span>${newvalue}</span>
+			<i class="fa-solid fa-rectangle-xmark"></i>`
+			li.classList.add("listtype")
+			ul.appendChild(li)
+		}
+	</script>
+</body>
+</html>
